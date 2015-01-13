@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Math is Fun</title>
+    <link href = "./style2.css" rel = "stylesheet" type = "text/css">
+  </head>
+  <body>
+    <div id = "calc">
+      <div id = "headline">
+        <h3>Math is Fun!</h3>
+      </div>
+      <div id = "input1">
+        <input class = "inputbox" id = "num1" type = "text" placeholder = "number 1">
+      </div>
+      <div id = "input2">
+        <input class = "inputbox" id = "num2" type = "text" placeholder = "number 2">
+      </div>
+      <span id = "buttons">
+        <button id = "add">+</button>
+        <button id = "subtract">-</button>
+        <button id = "multiply">*</button>
+        <button id = "divide">/</button>
+        <button id = "clear">c</button>
+      </span>
+      <div id = "output">
+        <input class = "inputbox" id = "answer" placeholder = "answer"></input>
+      </div>
+    </div>
+  </body>
+  <footer>
+    <script>
+
+      //add
+      var add = document.querySelector("#add");
+      add.addEventListener("click", function() {
+        var firstNum = parseInt(document.querySelector("#num1").value);
+        var secondNum = parseInt(document.querySelector("#num2").value);
+        var sum = firstNum + secondNum;
+        answer.value = sum
+      });
+
+      //subtract
+      var subtract = document.querySelector("#subtract");
+      subtract.addEventListener("click", function() {
+        var firstNum = parseInt(document.querySelector("#num1").value);
+        var secondNum = parseInt(document.querySelector("#num2").value);
+        var diff = firstNum - secondNum;
+        answer.value = diff
+      });
+
+      //multiply
+      var multiply = document.querySelector("#multiply");
+      multiply.addEventListener("click", function() {
+        var firstNum = parseInt(document.querySelector("#num1").value);
+        var secondNum = parseInt(document.querySelector("#num2").value);
+        var multiply = firstNum * secondNum;
+        answer.value = multiply
+      });
+
+      //divide
+      var divide = document.querySelector("#divide");
+      divide.addEventListener("click", function() {
+        var firstNum = parseInt(document.querySelector("#num1").value);
+        var secondNum = parseInt(document.querySelector("#num2").value);
+        if (secondNum === 0) {
+          alert("Cannot divide by zero.")
+        }
+        else {
+          var divide = firstNum / secondNum;
+          answer.value = divide
+        }
+      });
+
+      //clear
+      var clear = document.querySelector("#clear")
+      clear.addEventListener("click", function() {
+        location.reload(true);
+      });
+    </script>
+  </footer>
+</html>
